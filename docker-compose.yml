@@ -1,0 +1,17 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            - "8000:5000"
+        volumes:
+            - .:/app
+        links:
+            - db
+
+    db:
+        image: "postgres:9.6"
+        ports:
+            - "8432:5432"
+        environment:
+            POSTGRES_PASSWORD: hunter2
