@@ -25,6 +25,14 @@ SECRET_KEY = '=520mb*lhit^n-b0l%t3zu8kx84re7bm2lmt9bz5=-o1oz=3l5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    import ptvsd
+    # For more information of If statement Below, please see 
+    # https://ytec.nl/blog/debugging-django-vscode-without-using-noreload/
+    if os.environ.get('RUN_MAIN') or os.environ.get('WERKZEUG_RUN_MAIN'):
+        ptvsd.enable_attach(address=('0.0.0.0', 5678))
+
+
 ALLOWED_HOSTS = []
 
 

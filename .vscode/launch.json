@@ -1,0 +1,19 @@
+{
+    "configurations": [
+      {
+        "name": "Attach",
+        "type": "python",
+        "request": "attach",
+        "subProcess": true,
+        "port": 5678, // Please note this port, it is important to expose this in docker-compose
+        "host": "localhost",
+        "django": true, // allows you to set breakpoints in Django template files.
+        "pathMappings": [
+            {
+                "localRoot": "${workspaceFolder}",
+                "remoteRoot": "." // automatically maps to the remote cwd where your app is running
+            }
+        ],
+    }
+    ]
+  }

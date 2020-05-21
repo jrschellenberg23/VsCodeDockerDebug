@@ -1,0 +1,7 @@
+# This file is required to attach debug port
+# Run docker-compose -f docker-compose.yml -f docker-compose.debug.yml up --build
+version: '3'
+services:
+    web:
+        ports:
+            - "5678:5678"

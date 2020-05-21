@@ -1,1 +1,2 @@
 django
+ptvsd==4.3.2
